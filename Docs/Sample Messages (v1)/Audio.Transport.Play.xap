@@ -1,0 +1,12 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-Audio.Transport
+Source=ersp.message.send
+}
+Audio.Transport
+{
+Command=Play
+}

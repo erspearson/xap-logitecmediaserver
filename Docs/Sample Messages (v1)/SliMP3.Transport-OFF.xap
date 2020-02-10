@@ -1,0 +1,12 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=SliMP3.Transport
+Source=ersp.message.send
+}
+SliMP3.Transport
+{
+Command=Off
+}

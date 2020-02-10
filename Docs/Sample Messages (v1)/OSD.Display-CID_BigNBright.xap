@@ -1,0 +1,16 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.message.send
+}
+Display.Text
+{
+Line1=Incoming Call from:
+Line2=Someone (my number here)
+Duration=15
+Size=Double
+Brightness=Brightest
+}

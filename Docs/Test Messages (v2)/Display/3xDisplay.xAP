@@ -1,0 +1,64 @@
+
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.test.script
+Target=ersp.slimserver.>
+}
+Display.Text
+{
+Line1=Test Message #1
+Line2=Line2
+Duration=5
+Priority=1
+}
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.test.script
+Target=ersp.slimserver.>
+}
+Display.Text
+{
+Line1=Test Message #2
+Line2=Line2
+Duration=5
+Priority=1
+}
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.test.script
+Target=ersp.slimserver.>
+}
+Display.Text
+{
+Line1=We interrupt this broadcast for
+Line2=An important message
+Duration=7
+Type=Immediate
+}
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.test.script
+Target=ersp.slimserver.>
+}
+Display.Text
+{
+Line1=I should never get shown
+Duration=6
+TTL=18
+}

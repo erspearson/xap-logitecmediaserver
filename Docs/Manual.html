@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>xAP Plug-in for SqueezeCenter v7.x</title>
+    <link rel="stylesheet" href="Manual.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL-NS Stylesheets V1.73.1" />
+    <link rel="start" href="#id617444" title="xAP Plug-in for SqueezeCenter v7.x" />
+    <link rel="next" href="#id617356" title="1. Introduction" />
+  </head>
+  <body>
+    <div class="article" lang="en" xml:lang="en">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="id617444"></a>xAP Plug-in for SqueezeCenter v7.x</h1>
+          </div>
+          <div>
+            <div class="author">
+              <h3 class="author"><span class="firstname">Edward</span> <span class="surname">Pearson</span></h3>
+              <div class="affiliation">
+                <span class="org">
+          <span class="orgname">ersp — design</span>
+        </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="pubdate">September 2008</p>
+          </div>
+          <div>
+            <div class="revhistory">
+              <table border="1" width="100%" summary="Revision history">
+                <tr>
+                  <th align="left" valign="top" colspan="3">
+                    <b>Revision History</b>
+                  </th>
+                </tr>
+                <tr>
+                  <td align="left">Revision v1.1</td>
+                  <td align="left">02-Oct-2008</td>
+                  <td align="left">ersp</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="3">Accompanies v2.2.1 software.</td>
+                </tr>
+                <tr>
+                  <td align="left">Revision v1.0</td>
+                  <td align="left">14-Sep-2008</td>
+                  <td align="left">ersp</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="3">First release. Accompanies v2.2 software.</td>
+                </tr>
+                <tr>
+                  <td align="left">Revision v0.5</td>
+                  <td align="left">10-May-2008</td>
+                  <td align="left">ersp</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="3">Draft notes for beta software testers.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="toc">
+        <p>
+          <b>Table of Contents</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="section">
+              <a href="#id617356">1. Introduction</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="section">
+              <a href="#id617170">2. Installation</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="section">
+              <a href="#id617085">3. Configuration Settings</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="section">
+              <a href="#id616830">4. xAP Communications</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="section">
+                  <a href="#id616802">4.1. General</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id616380">4.2. Player Basic Status and Control (BSC)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id616051">4.3. Player Transport</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id615811">4.4. Player Audio Mixer</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id615643">4.5. Player Schedule</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id574605">4.6. Player Query</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id621381">4.7. Player On Screen Display (OSD)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id621048">4.8. Player Playlist</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id620689">4.9. Buttons and IR</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="section">
+                  <a href="#id620076">4.10. Server Control</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="section">
+              <a href="#id620340">5. Diagnostics</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id617356"></a>1. Introduction</h2>
+            </div>
+          </div>
+        </div>
+        <p>The xAP Plug-in for SqueezeCenter adds home automation capabilities
+    via the xAP automation protocol to the Slim Devices' SqueezeCenter media
+    server and players.</p>
+        <p>xAP is a set of conventions that allows home automation devices
+    connected to a home network to exchange information and control each
+    other. xAP is not any particular piece of software or hardware; it’s a
+    standard created to help programs and devices created by different home
+    automation manufacturers and enthusiasts talk to each other. There are
+    already a considerable number of things that speak xAP and the number is
+    growing all the time. There are new devices and programs that have been
+    created from the ground up to work with xAP as well as existing programs
+    and devices that are getting xAP-enabled. Enabling an existing program or
+    device to work with xAP can be done either by the original manufacturer
+    or, for programs that include a facility for others to create extensions
+    or plug-ins, by someone else. The plug-in for SqueezeCenter is that last
+    kind; a plug-in written by a third party that enables SqueezeCenter to
+    talk xAP.</p>
+        <p>This is a second generation, pure-Perl implementation of the xAP
+    plug-in. The previous version, released in 2006 supported server software
+    v6.x (SlimServer) which was a replacement for the earlier .Net-based
+    SlimServer connector that used to command line interface (CLI) to
+    SlimServer for its integration. This version has been significantly
+    revised to work with the updated v7.x SqueezeCenter software.</p>
+        <p>The plugin provides two-way xAP communication for SqueezeCenter with
+    the following main functions:</p>
+        <div class="itemizedlist">
+          <ul type="disc">
+            <li>
+              <p>Player power and volume control with xAP BSC</p>
+            </li>
+            <li>
+              <p>Player transport control</p>
+            </li>
+            <li>
+              <p>Player mixer control</p>
+            </li>
+            <li>
+              <p>Player message display</p>
+            </li>
+            <li>
+              <p>Playlist management</p>
+            </li>
+            <li>
+              <p>Server control</p>
+            </li>
+            <li>
+              <p>Access to low-level remote button and IR codes.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id617170"></a>2. Installation</h2>
+            </div>
+          </div>
+        </div>
+        <p>SqueezeCenter currently lacks a plugin install feature, though it is
+    on the roadmap. The supplied .zip file
+    (<code class="filename">Plugins-xAP-Plugin.zip</code>) should be opened and the
+    'xAP' folder at its top level copied to the 'Plugins' directory in your
+    SqueezeCenter installation. On Windows this is normally
+    '<code class="filename">C:\Program
+    Files\SqueezeCenter\server\Plugins</code>'.</p>
+        <p>For further instructions and installation troubleshooting hints,
+    look at the <a class="link" href="http://wiki.slimdevices.com/index.php/SqueezeCenter_Plugins">Slim
+    Devices Wiki page</a>.</p>
+        <p>Where's the code? If you're curious, the code for the plugin is in
+    the 'lib' directory in the '<code class="filename">Plugins-xAP-Plugin.par</code>'
+    file. A .par file is a thinly-disguised (file name extension changed) .zip
+    archive file.</p>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id617085"></a>3. Configuration Settings</h2>
+            </div>
+          </div>
+        </div>
+        <p>Once installed, the plug-in appears in the list of plugins on the
+    plugins tab of the SqueezeCenter settings web UI. You may need to scroll
+    down to find it. Settings specific to the plug-in can be found by clicking
+    on the "Settings" link next to the plug-in entry. The following settings
+    can be configured using the web UI:</p>
+        <div class="variablelist">
+          <dl>
+            <dt>
+              <span class="term">Update interval</span>
+            </dt>
+            <dd>
+              <p>xAP sends periodic heartbeats and status update messages. The
+          default setting of 60 seconds is typical.</p>
+            </dd>
+            <dt>
+              <span class="term">Remote control button messages</span>
+            </dt>
+            <dd>
+              <p>Choose whether to send and receive remote control button press
+          messages to/from the xAP network. By default this is turned off as
+          it generates a large number of messages. You only need to enable
+          this if you are going to do some low level integration using button
+          press information.</p>
+            </dd>
+            <dt>
+              <span class="term">Remote control infrared (IR) messages</span>
+            </dt>
+            <dd>
+              <p>Choose whether to send and receive SlimPlayer remote control
+          infrared (IR) code messages to/from the xAP network. By default this
+          is turned off as it generates a large number of messages. You only
+          need to enable this if you are going to do some very low level
+          integration using infrared codes.</p>
+            </dd>
+            <dt>
+              <span class="term">xAP message name style</span>
+            </dt>
+            <dd>
+              <p>When xAP integration was first done for SlimServer some
+          messages used "SliMP3' in their class and block names since this was
+          the name of the player product at the time. These were changed to
+          "Slim" for the previous version of this plug-in. The plug-in accepts
+          both forms but here you choose which form it generates for outbound
+          messages. You only need to choose "SliMP3" if you have other devices
+          on your network that are expecting this.</p>
+            </dd>
+            <dt>
+              <span class="term">xAP version</span>
+            </dt>
+            <dd>
+              <p>xAP is evolving from v1.2 to v1.3. The main change that
+          affects this plugin is the format of the xAP UID (see next setting)
+          which has been extended. Many, but not all, xAP devices have been
+          updated to use the new v1.3 UID format. It is suggested that you use
+          v1.3 format unless you know that there are v1.2 only devices on your
+          network that need to exchange messages with SqueezeCenter. v1.2 only
+          devices will often not recognise messages in v1.3 format. v1.3
+          devices will recognise v1.2 messages.</p>
+            </dd>
+            <dt>
+              <span class="term">xAP device ID</span>
+            </dt>
+            <dd>
+              <p>Each xAP device on a home network has a hex identifier that is
+          part of its unique ID (UID). A default is automatically generated;
+          you only need to change this if it conflicts (unlikely) with another
+          device on your xAP network. The device ID must be a series of
+          upper-case hexadecimal digits, eg '4E99A2F2' but not all 0's or all
+          F's, which are reserved.</p>
+            </dd>
+            <dt>
+              <span class="term">xAP IP broadcast address</span>
+            </dt>
+            <dd>
+              <p>Set the xAP IP broadcast address. By default this is
+          255.255.255.255 which is the 'limited broadcast' address. This
+          should work with most networks and does not get routed to other
+          networks. Change this if you need a more specific address (eg,
+          192.168.1.255). The most common reason to need a more specific
+          address is if the machine running SqueezeCenter has more than one
+          network connection (wired and wireless) or something that acts like
+          a network connection such as a VPN or dial-up.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id616830"></a>4. xAP Communications</h2>
+            </div>
+          </div>
+        </div>
+        <p>The plug-in supports two-way communication between SqueezeCenter and
+    a xAP network. Firstly it takes status information from SqueezeCenter
+    (like what’s playing) and pushes it out onto the xAP network. Secondly it
+    listens for relevant messages on the xAP network and acts on them. Pausing
+    a player, for example.</p>
+        <p>On its own the plug-in is of little use; it has nothing to talk to.
+    It becomes useful when you have another xAP-enabled device or program that
+    can understand the messages the plug-in sends or can create messages for
+    the plug-in to receive. These other components are commonly home
+    automation control programs like HomeSeer, HouseBot and Girder that can
+    control SqueezeCenter (eg, stop all players when you leave the house) or
+    devices that generate information that can usefully be displayed on
+    SlimPlayer screens like telephone caller ID, security alerts and
+    reminders.</p>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id616802"></a>4.1. General</h3>
+              </div>
+            </div>
+          </div>
+          <p>This section covers some general topics that relate to all areas
+      of xAP communications. The subsequent sections each cover the details of
+      a particular functional aspect of the plug-in.</p>
+          <div class="section" lang="en" xml:lang="en">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id616773"></a>xAP Schema</h4>
+                </div>
+              </div>
+            </div>
+            <p>The xAP plug-in for SqueezeCenter supports messages from these
+        xAP schema specifications:</p>
+            <div class="itemizedlist">
+              <ul type="disc">
+                <li>
+                  <p>Basic Status and Control <a class="link" href="http://www.xapautomation.org/index.php?title=Basic_Status_and_Control_Schema">(BSC)
+            v1.3</a></p>
+                </li>
+                <li>
+                  <p>Audio and Media Control <a class="link" href="http://www.xapautomation.org/index.php?title=Audio_and_Media_Control_Schema">v2.2</a>
+            with SqueezeCenter-specific extensions</p>
+                </li>
+                <li>
+                  <p>On Screen Display <a class="link" href="http://www.xapautomation.org/index.php?title=On_Screen_Display_%28OSD%29_Schema">(OSD)</a>
+            with SqueezeCenter-specific extensions.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="section" lang="en" xml:lang="en">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id616634"></a>Naming</h4>
+                </div>
+              </div>
+            </div>
+            <p>Although SlimServer is now officially named SqueezeCenter, the
+        xAP message schema for this plugin continue to use "SlimServer" and
+        "Slim" throughout. A move to Squeeze and SqueezeCenter was considered
+        but rejected. This was done to promote stability and interoperability
+        between xAP installations. Synonyms for messages that historically
+        used the original "SliMP3" were already introduced in v1; to introduce
+        a futher set for v2 would only lead to needless configuration
+        fault-finding.</p>
+          </div>
+          <div class="section" lang="en" xml:lang="en">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id616623"></a>Addressing</h4>
+                </div>
+              </div>
+            </div>
+            <p>The name used for the SlimServer's xAP source address is
+        <code class="code">ersp.SlimServer.hostname</code> where "hostname" is the name of
+        the computer it's running on. On my setup the server is called
+        "Pacific" so you will see the line:</p>
+            <p>
+              <code class="code">Source=ersp.SlimServer.Pacific</code>
+            </p>
+            <p>in the header section of the example messages sent by my
+        SqueezeCenter in this document.</p>
+            <p>The current version of the xAP plug-in does not require a xAP
+        target address to be set on messages sent to the plugin for any of the
+        message types other that the Basic Status and Control (BSC) messages.
+        Messages sent with no target will be acted on by all SqueezeCenter
+        servers and applied to all connected players in the case of
+        player-specific messages. Historically this was a handy shortcut in a
+        simple xAP network but it is no longer viewed as good practice so this
+        behaviour will likely to be changed in a future version. Therefore it
+        is recommended that you include a target parameter in all messages you
+        send to the SqueezeCenter plug-in.</p>
+            <p>When sending xAP messages with a target set to your
+        SqueezeCenter you can either the server name explicitly:</p>
+            <p>
+              <code class="code">Target=ersp.SlimServer.Pacific</code>
+            </p>
+            <p>which you'll want to do if you run more than one SqueezeCenter,
+        alternatively you can use the xAP wildcard address character "&gt;"
+        like this</p>
+            <p>
+              <code class="code">Target=ersp.SlimServer.&gt;</code>
+            </p>
+            <p>to send to any SqueezeCenter on your network. This approach is
+        best even for a single SqueezeCenter as it means you won't need to
+        change your xAP configuration even if you move or rename the machine
+        you run SqueezeCenter on.</p>
+            <p>Players attached to SqueezeCenter are addressed on sub-addresses
+        of the server. The sub-address name is taken from the player name with
+        any characters (eg, spaces) not valid in a xAP address removed. On my
+        network there are four players so I see player-specific messages being
+        sent from the following xAP addresses:</p>
+            <table class="simplelist" border="0" summary="Simple list">
+              <tr>
+                <td>
+                  <code class="code">ersp.slimserver.pacific:Study</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="code">ersp.slimserver.pacific:Office</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="code">ersp.slimserver.pacific:Bedroom</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="code">ersp.slimserver.pacific:LivingRoom</code>
+                </td>
+              </tr>
+            </table>
+            <p>You can combine the server wildcard address with the specific
+        sub-address of a player to send a message to a particular player while
+        retaining the independence on any particular SqueezeCenter machine
+        name like this:</p>
+            <p>
+              <code class="code">Target=ersp.slimserver.&gt;:Office</code>
+            </p>
+            <p>which will target the player "Office". So to pause (or un-pause)
+        the player in my office I'd send the message:</p>
+            <pre class="programlisting">xap-header
+{
+v=13
+Hop=1
+UID=FF.E2B800:0000
+Class=xAP-Audio.Transport
+Source=ersp.testscript.test
+Target=ersp.SlimServer.&gt;:Office
+}
+Audio.Transport
+{
+Command=Pause
+}</pre>
+            <p>Case is not significant in xAP source and target addresses
+        though it is recommended you be consistent.</p>
+          </div>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id616380"></a>4.2. Player Basic Status and Control (BSC)</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Classes accepted: <code class="classname">xAPBSC.Cmd,
+      xAPBSC.Query</code></p>
+          <p>Classes generated: <code class="classname">xAPBSC.Info,
+      xAPBSC.Event</code></p>
+          <p>Blocks generated: <code class="code">output.state</code>.</p>
+          <pre class="programlisting">output.state
+{
+DisplayText=(Off|Paused|Stopped|Playing)
+Level=&lt;volume&gt;/100
+State=(on|off)
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>Each player is represented by a BSC level output endpoint. The
+      endpoint's state represents the player's power state and its level
+      represents its volume level. While this duplicates functionality also
+      available in the xAP-Audio schema messages below, the Basic Status and
+      Control schema is useful as it is widely implemented in home automation
+      programs with 'plug and play'-like functionality. Each BSC player
+      endpoint will report its status at regular intervals with a BSC.Info
+      message.</p>
+          <p>For example, the message:</p>
+          <pre class="programlisting">xap-header
+{
+v=13
+hop=1
+uid=FF.099B4556:0004
+class=xAPBSC.Info
+source=ersp.SlimServer.Pacific:Office
+}
+output.state
+{
+DisplayText=Stopped
+Level=47/100
+State=on
+}</pre>
+          <p>shows that the player in my office is currently turned on
+      (State=On) has its volume set just under half way (47%) and it is
+      stopped. This message is sent every 60 seconds, this interval can be
+      changed via the Update Interval setting on the plug-in settings web UI
+      page. Changes to either the power state or the volume level will result
+      in a <code class="classname">xAPBSC.Event</code> message being sent (a
+      <code class="classname">xAPBSC.Event</code> message indicates a change in values
+      while a <code class="classname">xAPBSC.Info</code> message is a reminder of the
+      current values). So pressing the volume up button on the remote for my
+      office player causes the following <code class="classname">xAPBSC.Event</code>
+      message to be sent:</p>
+          <pre class="programlisting">xap-header
+{
+v=13
+hop=1
+uid=FF.099B4556:0004
+class=xAPBSC.Event
+source=ersp.SlimServer.Pacific:Office
+}
+output.state
+{
+DisplayText=Stopped
+<span class="bold"><strong>Level=48/100</strong></span>
+State=on
+}</pre>
+          <p>Note that the message class line in the header is now
+      <code class="classname">xAPBSC.Event</code> indicating a change and the Level
+      line in the body block now shows 48% for the volume.</p>
+          <p>All normal Basic Status and Control functionality is supported for
+      these endpoints including accepting <code class="classname">xAPBSC.Cmd</code>
+      and <code class="classname">xAPBSC.Query</code> messages. For example the BSC
+      command message:</p>
+          <pre class="programlisting">xap-header
+{
+v=13
+Hop=1
+UID=FF.E2B800:0000
+Class=xAPBSC.Cmd
+Source=ersp.testscript.test
+Target=ersp.SlimServer.&gt;:Office
+}
+output.state.1
+{
+ID=*
+<span class="bold"><strong>State=Off</strong></span>
+}</pre>
+          <p>will cause the office player to turn off. Including the level
+      parameter too will set a specific volume level:</p>
+          <pre class="programlisting">output.state.1
+{
+ID=*
+State=On
+<span class="bold"><strong>Level=80/100</strong></span>
+}</pre>
+          <p>Lastly the BSC player endpoints will respond to a
+      <code class="classname">xAPBSC.Query</code> message:</p>
+          <pre class="programlisting">xap-header
+{
+v=13
+Hop=1
+UID=FF.E2B800:0000
+Class=xAPBSC.Query
+Source=ersp.testscript.test
+Target=ersp.SlimServer.&gt;:Office
+}
+request
+{
+}</pre>
+          <p>by sending a <code class="classname">xAPBSC.Info</code> message.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id616051"></a>4.3. Player Transport</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="classname">xAP-Audio.Transport</code>
+      (or synonyms: <code class="classname">SliMP3.Transport, Slim.Transport</code>)
+      with block</p>
+          <pre class="programlisting">Audio.Transport
+{
+Command=(pause|play|stop|next|prev)
+[Param=(on|off)]
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Audio.Seek
+{
+Seek=(+mm.ss|-mm.ss|mm.ss)
+}</pre>
+          <p>Message class generated:
+      <code class="classname">xAP-Audio.Transport.Event</code></p>
+          <pre class="programlisting">Audio.Transport
+{
+Duration=&lt;mm:ss&gt;
+Elapsed=&lt;mm:ss&gt;
+PlayerID=&lt;xx:xx:xx:xx:xx:xx&gt;
+Remaining=&lt;mm:ss&gt;
+Repeat=(off|track|album)
+Shuffle=none
+State=(stopped|paused|playing)
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The xAP-Audio.Transport messages are concerned with what a player
+      is currently doing. Operation is similar to the transport display and
+      controls on a CD player. Each player will generate
+      <code class="classname">xAP-Audio.Transport.Event</code> messages at the update
+      interval (60 seconds default) when not playing and once a second while
+      playing. This message is also generated in response to a
+      xAP-Audio.Transport command message. The player ID (MAC address) can be
+      used for calls on the SqueezeCenter <acronym class="acronym">HTTP</acronym>
+      interface.</p>
+          <p>The command message has a single block either
+      <code class="classname">Audio.Transport</code> or
+      <code class="classname">Audio.Seek</code>. The
+      <code class="classname">Audio.Transport</code> block contains one required
+      parameter (<code class="varname">command</code>) and one optional parameter
+      (<code class="varname">param</code>). The optional parameter can be use with the
+      play, pause and stop commands to set an absolute state; without it the
+      pause command acts to toggle the pause state. The next and prev commands
+      will move to the next or previous song in the current playlist if
+      available. The <code class="classname">Audio.Seek</code> command block instructs
+      the player to move relatively forward or backwards in the current song
+      or to an absolute time position. Whether the player can do this depends
+      on the audio source being played.</p>
+          <p>If the command is not addressed to a particular player then all
+      players will be afftected.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id615811"></a>4.4. Player Audio Mixer</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="classname">xAP-Audio.Audio</code>
+      with block</p>
+          <pre class="programlisting">Audio.Mixer
+{
+[Volume=(0…100|+nn|-nn)]
+[Balance=(-100…0…+100|+nn |-nn)]
+[Bass=(0…100|+nn|-nn)]
+[Treble=(0...100|+nn|-nn)]
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Audio.Mute
+{
+Mute=(On|Off|Toggle)
+}</pre>
+          <p>generates message class: <code class="code">xAP-Audio.Event</code> with
+      block</p>
+          <pre class="programlisting">Audio.Mixer
+{
+Volume=nn
+[Balance=nn]
+[Bass=nn]
+[Treble=nn]
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Audio.Mute
+{
+Mute=(On|Off|Toggle)
+}</pre>
+          <p>respectively.</p>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The audio mixer messages are concerned with the audio output of a
+      player. Only early versions of SlimDevices players (the original SliMP3
+      and the SqueezeBox v1) allowed for control of bass, treble, balance and
+      pitch. Later players only allow for control of the volume.</p>
+          <p>If the command is not addressed to a particular player then all
+      players will be afftected.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id615643"></a>4.5. Player Schedule</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="classname">xAP-Audio.Schedule</code>
+      with block</p>
+          <pre class="programlisting">Schedule.Sleep
+{
+Sleep=&lt;seconds&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Schedule.Alarm
+{
+Command=(EnableAll|DisableAll)
+}</pre>
+          <p>Generates message class:
+      <code class="classname">xAP-Audio.Schedule.Event</code> with block</p>
+          <pre class="programlisting">Schedule.Sleep
+{
+Sleep=&lt;seconds&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Schedule.Alarm
+{
+Command=(enableall|disableall|sound|end|snooze|snooze_end)
+[ID=&lt;alarmID&gt;]
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The Audio.Schedule messages deal with time-based operations for
+      the players. The Schedule.Sleep block initiates a sleep sequence for a
+      player. After the time specified the player will fade any playing audio
+      to zero and then turn off. The sleep parameter in the number of seconds
+      until sleep. The Schedule.Alarm command block can enable and disable all
+      alarms for a player. Both these commands are confirmed with a
+      corresponding xAP-Audio.Schedule.Event message. Additionally, alarm
+      events are reported using the xAP-Audio.Schedule.Event message class
+      when triggered (command=sound), ended and snoozed. These messages could
+      be used to cause your betroom lights to fade up when the alarm clock
+      function is triggered (and off again when you press snooze).</p>
+          <p>If the command is not addressed to a particular player then all
+      players will be afftected.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id574605"></a>4.6. Player Query</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="classname">xAP-Audio.Query</code>
+      with block</p>
+          <pre class="programlisting">Audio.Query
+{
+Query=(Mode|Sleep|Power|Volume|Balance|Bass|Treble)
+} </pre>
+          <p>or</p>
+          <pre class="programlisting">Track.Query
+{
+Query=(Time|Genre|Artist|Album|Title|Duration|Path)
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Query
+{
+Query=(Index|Genre|Artist|Album|Title|Duration|Path|Tracks|Shuffle|Repeat)
+}</pre>
+          <p>generates message class</p>
+          <pre class="programlisting">Audio.Notification
+{
+Query=(Mode|Sleep|Power|Volume|Balance|Bass|Treble)
+Status=&lt;slimserver query result&gt;
+} </pre>
+          <p>or</p>
+          <pre class="programlisting">Track.Notification
+{
+Query=(Time|Genre|Artist|Album|Title|Duration|Path)
+Status=&lt;slimserver query result&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Notification
+{
+Query=(Index|Genre|Artist|Album|Title|Duration|Path|Tracks|Shuffle|Repeat)
+Status=&lt;slimserver query result&gt;
+[Index=&lt;index in playlist&gt;]
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The player query messages let you query various properties for a
+      player's current activity. The notification response message generated
+      includes the property queried and its current value.</p>
+          <p>If the command is not addressed to a particular player then all
+      players will respond.</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id621381"></a>4.7. Player On Screen Display (OSD)</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted:<code class="classname"> Message.Display </code>(or
+      synonyms: <code class="classname">xAP-OSD.Display, SliMP3.Display,
+      Slim.Display</code>) with block</p>
+          <pre class="programlisting">Display.Text
+{
+Line1=&lt;message text line&gt;
+[Line2=&lt;message text line&gt;]
+[Line3=&lt;message text line&gt;]
+[Line4=&lt;message text line&gt;]
+[Line5=&lt;message text line&gt;]
+[Line6=&lt;message text line&gt;]
+[Line7=&lt;message text line&gt;]
+[Line8=&lt;message text line&gt;]
+[Line9=&lt;message text line&gt;]
+[Duration=&lt;seconds&gt;]
+[TTL=&lt;seconds&gt;]
+[Align1=(left|centre|center)]
+[Align2=(left|centre|center)]
+[Type=(Queue|Immediate|Permanent)]
+[Tag=&lt;messageid&gt;]
+[Brightness=(PowerOn|PowerOff|Idle|Off|Dimmest|Dim|Bright|Brightest|0|1|2|3|4)]
+[Size=(Small|Medium|Large|s|m|l)]
+[Priority=&lt;integer&gt;]
+[Screen=(1|2)]
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Display.Text
+{
+Type=Delete
+Tag=&lt;messageid&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Display.Query
+{
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The on screen display message is used to display text messages on
+      a player's display. All block parameters apart from
+      <code class="varname">Line1</code> are optional.</p>
+          <div class="itemizedlist">
+            <ul type="disc">
+              <li>
+                <p>Up to 9 lines can be specified for compatability with other
+          display devices. In this implementation all lines after line 2 are
+          concatenated onto the end of line 2.</p>
+              </li>
+              <li>
+                <p><code class="varname">Priority</code> is an integer, the higher the
+          number the more priority it is given. The message queue is re-sorted
+          by priority after a message is added to the queue. The highest
+          priority message will be shown at any time. A shown message will be
+          taken off the display if a higher priority message is added to the
+          queue. A message taken off the display in this way will return to
+          the display for its remaining time when it re-gains highest priority
+          on the queue.</p>
+              </li>
+              <li>
+                <p>A message is taken off a display either when its duration
+          expires, a higher priority message arrives, it is cancelled via xAP
+          or a remote control button is pressed.</p>
+              </li>
+              <li>
+                <p><code class="varname">Type=Queue</code> is the default request type.
+          Immediate is a priority higher than any specified by the Priority
+          parameter. Permanent isn't really permanent, it's just quite a long
+          time.</p>
+              </li>
+              <li>
+                <p>If <code class="varname">TTL</code> (Time To Live) is specified and that
+          number of seconds passes between the message being enqueued and
+          arriving at the head of the queue it will be discarded without being
+          displayed. This is useful for low-priority status messages that are
+          only worth displaying for a certain period of time after they are
+          generated.</p>
+              </li>
+              <li>
+                <p>Brightness levels PowerOn, PowerOff, Idle, Off are the levels
+          set on the player for each of those modes.</p>
+              </li>
+              <li>
+                <p><code class="varname">Tag</code> is any alphanumeric string - used to
+          reference a message for later deletion. See below.</p>
+              </li>
+              <li>
+                <p><code class="varname">Screen</code> is for dual display Transporter (I'm
+          not lucky enough to have one so this is untested).</p>
+              </li>
+              <li>
+                <p>In this version messages are displayed on a Duet Controller
+          only briefly, the duration in not respected.</p>
+              </li>
+              <li>
+                <p>If the command is not addressed to a particular player then
+          the message will be shown on all players. There is an independent
+          message queue for each player.</p>
+              </li>
+            </ul>
+          </div>
+          <p>The second block format is used for cancelling/deleting a message.
+      The request can be sent to remove a previously sent display message
+      (which must have included a tag field). If the message is on display it
+      will be taken off the display. If the message is waiting in the queue it
+      will be removed from the queue (and never shown).</p>
+          <p>The third block format (Display.Query) is used to request the
+      current state of a SlimPlayer's display from SqueezeCenter. The message
+      can be targetted at a specific player or to the server in which case all
+      players will respond. The response is a message containing a
+      Display.Notification block:</p>
+          <pre class="programlisting">Display.Notification
+{
+Line1=Now playing (22 of 22) 
+Line2=22. Disappearing Volcano
+}</pre>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id621048"></a>4.8. Player Playlist</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="code">xAP-Audio.Playlist </code>with
+      block</p>
+          <pre class="programlisting">Playlist.Track
+{
+Command=(Play|Append)
+Track=&lt;TrackURL&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Track
+{
+Command=Delete
+Track=&lt;TrackIndex&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Track
+{
+Command=Index
+Track=(+nn|-nn|nn)
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Move
+{
+From=&lt;index&gt;
+To=&lt;index&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Edit
+{
+Edit=(Load|Add)
+Playlist=&lt;PlaylistURL&gt;
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Edit
+{
+Edit=Clear
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Album
+{
+Command=(Load|Append)
+Artist=&lt;artist&gt;
+Genre=&lt;genre&gt;
+[Album=&lt;album&gt;]
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Shuffle
+{
+Shuffle=(On|Off)
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Playlist.Repeat
+{
+Repeat=(Stop|Track|Playlist)
+}</pre>
+          <p>generates: <code class="classname">xAP-Audio.Playlist.Info or
+      xAP-Audio.Playlist.Event</code> with block</p>
+          <pre class="programlisting">Now.Playing
+{
+Album=&lt;album title&gt;
+AlbumID=&lt;integer&gt;
+Artist=&lt;artist&gt;
+Duration=&lt;mm:ss&gt;
+Genre=&lt;genre&gt;
+Index=&lt;position in playlist&gt;
+Path=&lt;url of track&gt;
+Title=&lt;track title&gt;
+TrackID=&lt;integer&gt;
+Tracks=&lt;# tracks in playlist&gt;
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The commands in this section all relate to the current playlist
+      for a player. Various operations can be performed on the playlist
+      including moving among its tracks, rearranging the tracks, loading new
+      songs etc. Perhaps the more significant aspect of this part of the
+      schema though are the <code class="classname">xAP-Audio.Playlist.Info</code> and
+      <code class="classname">xAP-Audio.Playlist.Event</code> messages that are
+      generated at regular intervals as well as in response to one of the
+      <code class="classname">xAP-Audio.Playlist</code> command messages. The
+      <code class="classname">.Event</code> variation signifies a change in the
+      playlist or the player's position in the playlist (for example the
+      transition to the next track). The <code class="classname">.Info</code> version
+      is generated regularly while a player is playing. Which fields are
+      present in the Now.Playing block will depend on the audio source.</p>
+          <p>As an example, the following message was generated during an 80's
+      revival moment:</p>
+          <pre class="programlisting">Now.Playing
+{
+Album=You And Me Both (Remastered 2008 Edition)
+AlbumID=1448
+Artist=Yazoo
+Duration=4:32
+Genre=No Genre
+Index=1
+Path=file:///M:/Yazoo/You And Me Both (2008)/01 - Nobody's Diary.flac
+Title=Nobody's Diary
+TrackID=8144
+Tracks=11
+}</pre>
+          <p><code class="varname">AlbumID</code> and <code class="varname">TrackID</code> are
+      SqueezeCenter's database identifiers. They can be used to call back into
+      SqueezeCenter's <acronym class="acronym">HTTP</acronym> and <acronym class="acronym">CLI</acronym>
+      interfaces (eg, to retreive artwork). For example, the thumbnail image
+      for a track can be retrieved using the track id from:</p>
+          <p>
+            <code class="code">http://&lt;slimserver&gt;:&lt;port&gt;/music/&lt;trackid&gt;/thumb.jpg</code>
+          </p>
+          <p>The thumbnail for the currently playing track on a player can be
+      retieved using the playerid from:</p>
+          <p>
+            <code class="code">http://&lt;slimserver&gt;:&lt;port&gt;/music/current/cover.jpg?player=&lt;playerid&gt;</code>
+          </p>
+          <p>The playerid (which can be found in a Transport.Info block) will
+      have to be 'url escaped' in this case since it contains ':' characters
+      that are not allowed in their raw form in a URL (the playerID is the
+      player's ethernet MAC address).</p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id620689"></a>4.9. Buttons and IR</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Message class accepted: <code class="classname">slim.button</code>
+      (synonym <code class="classname">slimp3.button</code>) with block</p>
+          <pre class="programlisting">button.command
+{
+button=&lt;buttonid&gt;
+}</pre>
+          <p>Message class accepted: <code class="classname">slim.ir </code>(synonym
+      <code class="classname">slimp3.ir</code>) with block</p>
+          <pre class="programlisting">ir.command
+{
+code=&lt;ircode&gt;
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>These are advanced functions and must be enabled explicitly in the
+      confuguration web page before they will operate. This feature is more
+      usually used to output button presses and IR codes from SqueezeCenter
+      rather than injecting these events into SqueezeCenter. Enabling the IR
+      function will cause the plug-in to report SqueezeCenter's internal
+      events for every remote control IR code received, including the stream
+      of repeat codes when a button is held down. SqueezeCenter maps these IR
+      codes to button press events. Enabling the button function will report
+      these button press events, including button repeat events.</p>
+          <p>IR codes are reported like this:</p>
+          <pre class="programlisting">IR.Event
+{
+Code=7689e01f
+Name=up
+Time=1365685.29
+}</pre>
+          <p>with the parameters indicating:</p>
+          <div class="variablelist">
+            <dl>
+              <dt>
+                <span class="term">Code</span>
+              </dt>
+              <dd>
+                <p>is a hex string that represents the low-level infrared code
+            received by the sensor on the player.</p>
+              </dd>
+              <dt>
+                <span class="term">Name</span>
+              </dt>
+              <dd>
+                <p>is the symbol name that SqueezeCenter has mapped to the IR
+            code.</p>
+              </dd>
+              <dt>
+                <span class="term">Time</span>
+              </dt>
+              <dd>
+                <p>is the code timestamp; the time in seconds when the code was
+            received.</p>
+              </dd>
+            </dl>
+          </div>
+          <p>The codes and name mappings for the suplied remote control can be
+      found in the file:</p>
+          <p>
+            <code class="filename">SqueezeCenter\server\IR\Slim_Devices_Remote.ir</code>
+          </p>
+          <p>Players with controls on the unit also generate pseudo IR codes
+      when pressed, these are listed in:</p>
+          <p>
+            <code class="filename">SqueezeCenter\server\IR\Front_Panel.ir</code>
+          </p>
+          <p>Button presses are reported like this:</p>
+          <pre class="programlisting">Button.Event
+{
+Button=up
+}</pre>
+          <p>where the Button parameter is the logical button name that
+      SqueezeCentre has mapped the IR code to.</p>
+          <p>The mapping of buttons to functions can be found in the
+      file</p>
+          <p>
+            <code class="filename">SqueezeCenter\server\IR\Default.map</code>
+          </p>
+        </div>
+        <div class="section" lang="en" xml:lang="en">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id620076"></a>4.10. Server Control</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            <span class="bold">
+              <strong>Synopsis</strong>
+            </span>
+          </p>
+          <p>Theis message must to targeted to a specific server.</p>
+          <p>Message class accepted <code class="classname">Slim.Server</code> (or
+      synonym <code class="classname">SliMP3.Server</code>) with block:</p>
+          <pre class="programlisting">Server.Command
+{
+Command=(Rescan|Rescan playlists|Wipecache)
+}</pre>
+          <p>or</p>
+          <pre class="programlisting">Player.Query
+{
+Command=(Count|Name|Address)
+[Playerindex=&lt;0..n&gt;]
+}</pre>
+          <p>
+            <span class="bold">
+              <strong>Description</strong>
+            </span>
+          </p>
+          <p>The first form of this message class controls SqueezeCenter's
+      library scanning functions. It can be used to initiate a rescan of the
+      library or playlists.</p>
+          <p>The second form can be used to interrogate what players are
+      connected to SqueezeCenter. Call it first with command=count to have
+      SqueezeCenter report the number of connected players:</p>
+          <pre class="programlisting">Player.Notification
+{
+Command=count
+Status=4
+}</pre>
+          <p>You can then request the name and address for each of the players
+      with command=name or command=address with the playerindex parameter set
+      to a zero-based index of a player. For example:</p>
+          <pre class="programlisting">Player.Query
+{
+Command=address
+Playerindex=2
+}</pre>
+          <p>in my setup returns:</p>
+          <pre class="programlisting">Player.Notification
+{
+Command=address
+Status=192.168.8.109:40843
+}</pre>
+          <p>which is the IP address and TCP port the player is using.</p>
+        </div>
+      </div>
+      <div class="section" lang="en" xml:lang="en">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="id620340"></a>5. Diagnostics</h2>
+            </div>
+          </div>
+        </div>
+        <p>The plug-in uses the same log4perl logging package as the rest of
+    SqueezeCenter. It defines the following message logger categories:</p>
+        <div class="variablelist">
+          <dl>
+            <dt>
+              <span class="term">plugin.xap</span>
+            </dt>
+            <dd>
+              <p>general information on the plug-in's behaviour. A good place
+          to start.</p>
+            </dd>
+            <dt>
+              <span class="term">plugin.xap.comm</span>
+            </dt>
+            <dd>
+              <p>low level xAP communications including IP socket detail.
+          Enable this to see all xAP messages sent and received by the
+          plug-in.</p>
+            </dd>
+            <dt>
+              <span class="term">plugin.xap.settings</span>
+            </dt>
+            <dd>
+              <p>web interface user settings (not very interesting).</p>
+            </dd>
+            <dt>
+              <span class="term">plugin.xap.message</span>
+            </dt>
+            <dd>
+              <p>details on xAP message processing.</p>
+            </dd>
+            <dt>
+              <span class="term">plugin.xap.display</span>
+            </dt>
+            <dd>
+              <p>detailed information on player OSD messages including message
+          queue processing and status.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>To enable logging start SqueezeCenter from the command line and use
+    the --debug flag followed by a comma-separated list of logging
+    settings.</p>
+        <p>For example:</p>
+        <pre class="programlisting">perl.exe slimserver.pl --debug plugin.xap=DEBUG,plugin.xap.comm=DEBUG</pre>
+      </div>
+    </div>
+  </body>
+</html>

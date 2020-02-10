@@ -1,0 +1,13 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FFE2B800
+Class=xAP-Audio.Transport
+Source=ersp.message.send
+Taget=ersp.slimserver.>:study
+}
+Audio.Transport
+{
+Command=Pause
+}

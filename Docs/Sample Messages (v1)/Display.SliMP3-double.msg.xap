@@ -1,0 +1,24 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.message.send
+}
+Display.Text.1
+{
+Line1=Incoming Voice Call from:
+Line2=Someone (01234-567890)
+Duration=20
+Align1=Left
+Align2=Left
+}
+Display.Text.2
+{
+Line1=Bloop Bloop
+Line2=Blip Blip Blip... and on and on and on etc etc etc...
+Duration=15
+Align1=Left
+Align2=Left
+}

@@ -1,0 +1,15 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.message.send
+}
+Display.Text
+{
+Line1=New email has arrived from:
+Line2=xap@xapautomation.org
+Duration=20
+Brightness=Brightest
+}

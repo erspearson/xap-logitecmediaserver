@@ -1,0 +1,18 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-Audio.Playlist
+Source=ersp.message.send
+}
+Playlist.Track
+{
+Command=Append
+Track=M:\Aimee Mann\I'm With Stupid\01 - Long Shot.mp3
+}
+Playlist.Track
+{
+Command=Append
+Track=M:\Aldo Nova\1991 - Blood On The Bricks\01 - Blood On The Bricks.mp3
+}

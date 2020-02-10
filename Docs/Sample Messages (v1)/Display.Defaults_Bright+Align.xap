@@ -1,0 +1,17 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=SliMP3.Display
+Source=ersp.message.send
+}
+Display.Defaults
+{
+Align1=Centre
+Align2=Centre
+OnBrightness=Bright
+OffBrightness=Bright
+OnDisplaySize=Default
+OffDisplaySize=Default
+}

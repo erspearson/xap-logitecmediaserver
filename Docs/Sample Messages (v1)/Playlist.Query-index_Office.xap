@@ -1,0 +1,13 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-Audio.Query
+Source=ersp.message.send
+Target=KCSoft.SliMP3.Anya:Office
+}
+Playlist.Query
+{
+Query=Index
+}

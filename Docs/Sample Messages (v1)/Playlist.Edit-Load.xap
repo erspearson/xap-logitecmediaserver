@@ -1,0 +1,13 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-Audio.Playlist
+Source=ersp.message.send
+}
+Playlist.Edit
+{
+Edit=Load
+Playlist=M:\101 South\2000 - 101 South\2000 - 101 South.m3u
+}

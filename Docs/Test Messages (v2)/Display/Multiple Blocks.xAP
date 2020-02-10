@@ -1,0 +1,100 @@
+
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.test.script
+Target=ersp.slimserver.baltic:study
+}
+Display.Text.1
+{
+Line1=Test Message #1
+Line2=.
+Duration=1
+}
+Display.Text.2
+{
+Line1=Test Message #2
+Line2=..
+Duration=1
+}
+Display.Text.3
+{
+Line1=Test Message #3
+Line2=...
+Duration=1
+}
+Display.Text.4
+{
+Line1=Test Message #4
+Line2=....
+Duration=1
+}
+Display.Text.5
+{
+Line1=Test Message #5
+Line2=.....
+Duration=1
+}
+Display.Text.6
+{
+Line1=Test Message #6
+Line2=......
+Duration=1
+}
+Display.Text.7
+{
+Line1=Test Message #7
+Line2=.......
+Duration=1
+}
+Display.Text.8
+{
+Line1=Test Message #8
+Line2=........
+Duration=1
+}
+Display.Text.9
+{
+Line1=Test Message #9
+Line2=.........
+Duration=1
+}
+Display.Text.10
+{
+Line1=Test Message #10
+Line2=...........
+Duration=1
+}
+Display.Text.11
+{
+Line1=Test Message #11
+Line2=...........
+Duration=1
+}
+Display.Text.12
+{
+Line1=Test Message #12
+Line2=............
+Duration=1
+}
+Display.Text.13
+{
+Line1=Test Message #13
+Line2=.............
+Duration=1
+}
+Display.Text.14
+{
+Line1=Test Message #14
+Line2=..............
+Duration=1
+}
+Display.Text.15
+{
+Line1=Test Message #15
+Line2=...............
+Duration=1
+}

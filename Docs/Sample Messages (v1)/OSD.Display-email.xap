@@ -1,0 +1,18 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-OSD.Display
+Source=ersp.message.send
+}
+Display.Text
+{
+Line1=Message Display
+Line2=Email message with tag
+Tag=1234
+align1=centre
+align2=left
+size=medium
+Duration=60
+}

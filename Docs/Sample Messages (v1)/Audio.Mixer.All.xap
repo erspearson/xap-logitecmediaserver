@@ -1,0 +1,15 @@
+xap-header
+{
+v=12
+Hop=1
+UID=FF123400
+Class=xAP-Audio.Audio
+Source=ersp.message.send
+}
+Audio.Mixer
+{
+Volume=+10
+Balance=-10
+Bass=+25
+Treble=-25
+}
