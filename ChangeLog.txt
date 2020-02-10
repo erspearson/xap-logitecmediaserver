@@ -1,0 +1,124 @@
+Change log
+
+v2.4.1 (beta) 16-Oct-09
+Fix bug where the 'param' parameter in transport commands was not being respected
+
+v2.4 (beta) 01-Oct-09
+Added Use Hub configuration option (default is no).
+Added new server management logic - BSC messages indicate when a client has connected to a different server or SqueezeNetwork.
+Changes for Squeezebox Server 7.4
+  Upgrade code and tools to Perl v 5.10
+  Migrate web UI page to CSRF protection module
+
+v2.3.1
+Fixed issues with tagged display message deletion
+
+v2.3b3 24-Dec-08
+Fixed build issue for artist/title for local content
+
+v2.3b2 23-Dec-08
+Fixed issues with artist, title, duration/remaining fields for remote streams
+Added support for Extension Downloader. Repository: http://www.erspearson.com/xAP/Slim/Updates.xml
+
+v2.3.0 14-Dec-08
+Updates to work with new streaming sub-system.
+Added Mixer.Cmd block to xAP-Audio.Audio.Event messages to indicate what changed.
+
+v2.2.2 09-Oct-08
+Fixed case where xAPBSC.Cmd messages level parameter not being parsed correctly.
+
+v2.2.1 02-Oct-08
+Fixed case where Now.Playing shows wrong song data after player sync/unsync.
+Fixed issue where BSC ID=nnnn parameter being parsed incorrectly in xAPBSC.Cmd messages.
+Added xAPBSC.Cmd state=toggle.
+Improved BSC Event/Info selection/timing.
+Send xAPBSC.Event when DisplayText changes.
+Send xAPBSC.Event on power up due to xAP-Audio.Transport command.
+Added alarm notifications to xAP-Audio.Schedule.Event messages.
+Added simple alarm control (enable/disable all) via xAP-Audio.Schedule.
+Removed last dependencies on legacy command execution (which is broken in 7.2.1 23353).
+Harmonised log4perl logger categories and added to documentation.
+
+v2.2.0 (first official v2 release)
+
+v2.0.b6 (RC2)
+Changed approach to providing settings web interface to support both 7.0.x and 7.1.x
+Added support for ability in 7.1 to hide visualisers while displaying messages.
+
+v2.0.b5 (RC1)
+
+19/07/08
+
+Tested with SCv7.1 nightly releases up to 7.1 21814
+Added workaround for trunk modifications (bug 7922) to slim/buttons/screensaver.pm that do not respect brightness settings for ShowBriefly
+
+10/07/08
+
+Fixed defects reported by beta testers.
+Added Time To Live (TTL) parameter to message display.
+  Queued messages will not be shown if they don't make it to the front of the queue in this number of seconds.
+
+v2.0.b4
+02/04/08
+
+Re-write of OSD/Display message handling:
+  Correct interaction with screensaver and screen dimming
+  Added font size parameter (size=small|medium|large|s|m|l)
+  Added brightness parameter (brightness=powerOn|powerOff|idle|off|dimmest|dim|bright|brightest|0|1|2|3|4))
+  Added screen number parameter (screen=1|2)
+  Added queue priority parameter (priority=<n>)
+  Allow messages to me dismissed using remote control.
+  Messages for display can now be tagged (tag=<some alphanum string>)
+  Tagged messages can be deleted. Either taken off screen or removed from queue, eg
+  
+	  Display.Text
+	  {
+	  Type=delete
+	  Tag=1234
+	  }
+
+v2.0.b3
+28/03/08
+
+Add xAP v1.3 UID's
+
+v2.0.b2
+24/03/08
+
+SlimCenter v7 final conversion. Settings HTML, testing, PAR package.
+
+v2.0.b1
+28/12/07
+
+Initial conversion for SlimCenter v7 with new plugin structure, logging, preferences etc
+
+beta3
+14/11/06
+
+Changed open_port in Comm.pm to use INADDR_LOOPBACK, INADDR_BROADCAST and INADDR_ANY
+rather than localhost, 255.255.255.255 and 0.0.0.0
+
+Added configuration entry for xAP broadcast address. Defaults to INADDR_BROADCAST.
+
+Removed restriction in Slim_Item.pm and SlimServer_Item.pm that messages need to be targetted.
+BSC messages remain requiring a target as per spec.
+
+Now tries 'no hub' mode before trying to connect to hub (Plugin.pm and Comm.pm),
+so should work without a hub.
+
+Determined that CRC.pm should not be included in the distribution (required functions in Comm.pm).
+
+Fixed issues en-queuing and de-queuing display messages.
+
+Removed attempt to force brightness on display messages;
+SlimServer v6.5 reverts to pre-set message brightness on next display refresh.
+
+Tidied up web settings. Used in-line HTML to work around default skin CSS line spacing issues.
+Only tested with default skin.
+
+Persist player subID values in player preferences.
+Once an ID is allocated to a player it will keep that ID across restarts. Previously done
+on a first come (connect) first served basis at startup.
+
+Fixed null pointer issue in song/transport data when no current playlist exists for player.
+

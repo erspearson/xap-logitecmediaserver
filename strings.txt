@@ -1,0 +1,119 @@
+PLUGIN_XAP
+	EN	xAP Home Automation
+
+PLUGIN_XAP_DESC
+	EN	xAP Home Automation connects SqueezeCenter with other xAP-enabled services and devices around the home.
+
+SETUP_GROUP
+	EN	xAP Home Automation
+
+SETUP_GROUP_DESC
+	EN	SqueezeCenter integration with xAP home automation - see <a href="http://www.xapautomation.org" target="_blank">www.xapautomation.org</a> and <a href="http://www.erspearson.com/xAP" target="_blank">www.erspearson.com</a>.<br>xAP is a system of network messages sent and received by SqueezeCenter that integrate it with other devices and services around the home.
+	
+SETUP_RESTART
+	EN	Note: You will need to restart the server to see the effect of changing these settings.
+
+SETUP_XAP_INTERVAL
+	EN	Update interval
+
+SETUP_XAP_INTERVAL_DESC
+	EN	xAP sends periodic heartbeats and status update messages. The default setting of 60 seconds is typical.
+
+SETUP_XAP_BUTTONS
+	EN	Remote control button messages
+
+SETUP_XAP_BUTTONS_DESC
+	EN	Send and receive SlimPlayer remote control button press messages to/from the xAP network.
+
+SETUP_XAP_IR
+	EN	Remote control infrared (IR) messages
+
+SETUP_XAP_IR_DESC
+	EN	Communicate SlimPlayer remote control infrared (IR) code messages to/from the xAP network.
+
+SETUP_ENABLED
+	EN	Enabled
+
+SETUP_DISABLED
+	EN	Disabled
+
+SETUP_XAP_V
+	EN	xAP version
+
+SETUP_XAP_V_DESC
+	EN	Choose xAP version and the corresponding UID format. v1.3 has an extended UID format.
+
+SETUP_V12
+	EN	v1.2 UID=NNDDDDSSS
+
+SETUP_V13
+	EN	v1.3 UID=NN.DDDDDDDD:SSSS
+
+SETUP_LEGACY_SCHEMA_NAMES
+	EN	xAP message name style
+
+SETUP_LEGACY_SCHEMA_NAMES_DESC
+	EN	Choose the name of message classes used to send Slim-specific messages (both work for receive).
+
+SETUP_LEGACY_SCHEMA_NAMES_SLIMP3
+	EN	SliMP3.x (legacy)
+
+SETUP_LEGACY_SCHEMA_NAMES_SLIM
+	EN	Slim.x (current)
+
+SETUP_USEHUB
+	EN	xAP hub
+
+SETUP_USEHUB_DESC
+	EN	Choose whether to use an external xAP hub or bind directly to the xAP port (3639). With no hub SqueezeCenter can be the only xAP application on this machine.
+
+SETUP_USEHUB_YES
+	EN	External hub
+
+SETUP_USEHUB_NO
+	EN	No hub
+	
+SETUP_SERVER_SOURCE
+	EN	xAP server source address
+
+SETUP_SERVER_SOURCE_DESC
+	EN	Choose the xAP source address of the server. This is the address on the xAP network of this server.
+
+SETUP_SERVER_SOURCE_SLIM
+	EN	SlimServer
+
+SETUP_SERVER_SOURCE_SQUEEZE_ENUS
+	EN	SqueezeCenter
+	
+SETUP_SERVER_SOURCE_SQUEEZE_ENUK
+	EN	SqueezeCentre
+	
+SETUP_XAP_UID
+	EN	xAP device ID
+
+SETUP_XAP_UID_DESC
+	EN	Each xAP device on a home network has a hex identifier that is part of its unique ID (UID). A default is automatically generated; you only need to change this if it conflicts (unlikely) with another device on your xAP network.
+
+SETUP_XAP_UID_REJECT
+	EN	The device ID must be a series of upper-case hexadecimal digits - eg, '4EF2' but not all 0's or all F's, which are reserved.
+	
+SETUP_XAP_UID_ACCEPT
+	EN	The device ID was changed to %s.
+
+SETUP_XAP_UID_ACCEPT_ADDL
+	EN	The change will take effect after a server restart.
+
+SETUP_XAP_BROADCAST
+	EN	xAP IP broadcast address
+
+SETUP_XAP_BROADCAST_DESC
+	EN	Set the xAP IP broadcast address. By default this is 255.255.255.255 which is the 'limited broadcast' address, should work with most networks and does not get routed. Change this if you need some other address (eg, 192.168.1.255).
+
+SETUP_XAP_BROADCAST_REJECT
+	EN	The address must be a valid v4 IP broadcast address.
+
+SETUP_XAP_BROADCAST_ACCEPT
+	EN	The broadcast address was changed to %s.
+
+SETUP_XAP_BROADCAST_ACCEPT_ADDL
+	EN	The change will take effect after a server restart.

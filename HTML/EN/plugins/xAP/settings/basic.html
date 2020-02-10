@@ -1,0 +1,69 @@
+[% PROCESS settings/header.html %]
+
+	[% WRAPPER setting title="SETUP_GROUP" desc="" %]
+		<div class="prefDesc">[% "SETUP_GROUP_DESC" | string %]</div>
+	[% END %]
+    
+	[% WRAPPER setting title="SETUP_XAP_INTERVAL" desc="SETUP_XAP_INTERVAL_DESC" %]
+		<input type="text" class="stdedit" name="pref_update_interval" id="update_interval" value="[% prefs.update_interval %]" size="2"> seconds
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_XAP_BUTTONS" desc="SETUP_XAP_BUTTONS_DESC" %]
+		<select class="stdedit" name="pref_xAP_buttons" id="xAP_buttons">
+
+			<option [% IF NOT prefs.xAP_buttons %]selected [% END %]value="0">[% 'SETUP_DISABLED' | getstring %]</option>
+			<option [% IF prefs.xAP_buttons %]selected [% END %]value="1">[% 'SETUP_ENABLED' | getstring %]</option>
+
+		</select>
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_XAP_IR" desc="SETUP_XAP_IR_DESC" %]
+		<select class="stdedit" name="pref_xAP_ir" id="xAP_ir">
+
+			<option [% IF NOT prefs.xAP_ir %]selected [% END %]value="0">[% 'SETUP_DISABLED' | getstring %]</option>
+			<option [% IF prefs.xAP_ir %]selected [% END %]value="1">[% 'SETUP_ENABLED' | getstring %]</option>
+
+		</select>
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_LEGACY_SCHEMA_NAMES" desc="SETUP_LEGACY_SCHEMA_NAMES_DESC" %]
+		<select class="stdedit" name="pref_use_legacy_schema_names" id="use_legacy_schema_names">
+
+			<option [% IF prefs.use_legacy_schema_names %]selected [% END %]value="1">[% 'SETUP_LEGACY_SCHEMA_NAMES_SLIMP3' | getstring %]</option>
+			<option [% IF NOT prefs.use_legacy_schema_names %]selected [% END %]value="0">[% 'SETUP_LEGACY_SCHEMA_NAMES_SLIM' | getstring %]</option>
+
+		</select>
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_XAP_V" desc="SETUP_XAP_V_DESC" %]
+		<select class="stdedit" name="pref_xAP_v13" id="xAP_v13">
+
+			<option [% IF NOT prefs.xAP_v13 %]selected [% END %]value="0">[% 'SETUP_V12' | getstring %]</option>
+			<option [% IF prefs.xAP_v13 %]selected [% END %]value="1">[% 'SETUP_V13' | getstring %]</option>
+
+		</select>
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_XAP_UID" desc="SETUP_XAP_UID_DESC" %]
+		0x<input type="text" class="stdedit" name="pref_uid" id="uid" value="[% prefs.uid %]" size="12">
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_XAP_BROADCAST" desc="SETUP_XAP_BROADCAST_DESC" %]
+		<input type="text" class="stdedit" name="pref_broadcast" id="broadcast" value="[% prefs.broadcast %]" size="14">
+	[% END %]
+
+	[% WRAPPER setting title="SETUP_USEHUB" desc="SETUP_USEHUB_DESC" %]
+		<select class="stdedit" name="pref_usehub" id="usehub">
+
+			<option [% IF NOT prefs.usehub %]selected [% END %]value="0">[% 'SETUP_USEHUB_NO' | getstring %]</option>
+			<option [% IF prefs.usehub %]selected [% END %]value="1">[% 'SETUP_USEHUB_YES' | getstring %]</option>
+
+		</select>
+	[% END %]
+        
+
+	[% WRAPPER setting title="" desc="" %]
+		<div class="prefDesc">[% "SETUP_RESTART" | string %]</div>
+	[% END %]
+
+[% PROCESS settings/footer.html %]

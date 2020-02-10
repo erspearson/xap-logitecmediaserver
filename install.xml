@@ -1,0 +1,19 @@
+<?xml version='1.0' standalone='yes'?>
+<extension>
+  <name>PLUGIN_XAP</name>
+  <creator>ersp-design</creator>
+  <defaultState>enabled</defaultState>
+  <description>PLUGIN_XAP_DESC</description>
+  <email>edward@erspearson.com</email>
+  <homepageURL>http://www.erspearson.com/xAP</homepageURL>
+  <id>2A6CA380-F0B9-1014-A183-BC2011EB1E58</id>
+  <module>Plugins::xAP::Plugin</module>
+  <optionsURL>plugins/xAP/settings/basic.html</optionsURL>
+  <targetApplication>
+    <id>SqueezeCenter</id>
+    <maxVersion>*</maxVersion>
+    <minVersion>7.4</minVersion>
+  </targetApplication>
+  <type>2</type>
+  <version>2.4.3</version>
+</extension>
